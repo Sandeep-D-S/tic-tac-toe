@@ -2,8 +2,9 @@ pages:
   stage: deploy
   script:
     - mkdir -p public
-    - cp -r . public
-    - rm -rf public/.git public/.gitlab-ci.yml public/.gitlab public/.gitignore
+    - tar --exclude='.git' --exclude='.gitlab-ci.yml' --exclude='public' -cf site.tar .
+    - tar -xf site.tar -C public
+    - rm site.tar
   artifacts:
     paths:
       - public

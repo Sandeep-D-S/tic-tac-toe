@@ -3,7 +3,7 @@ pages:
   script:
     - echo "Listing public/"
     - ls -la public || true
-    - head -n 20 public/ttt.html || true
+    - head -n 20 public/index.html || true
   artifacts:
     paths:
       - public

@@ -1,7 +1,4 @@
-// Advanced Tic-Tac-Toe (light theme) with Minimax AI, undo, history, scoreboard,
-// animated SVG win line and confetti burst on win.
 
-// DOM refs
 const cells = Array.from(document.querySelectorAll('.cell'));
 const boardWrap = document.querySelector('.board-wrap');
 const boardEl = document.querySelector('.board');

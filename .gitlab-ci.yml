@@ -1,9 +1,7 @@
 pages:
   stage: deploy
   script:
-    - echo "Listing public/"
-    - ls -la public || true
-    - head -n 20 public/index.html || true
+    - echo "Publishing public/ folder"
   artifacts:
     paths:
       - public

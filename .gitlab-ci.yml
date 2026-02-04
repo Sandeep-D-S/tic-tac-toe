@@ -2,7 +2,8 @@ pages:
   stage: deploy
   script:
     - mkdir -p public
-    - rsync -av --exclude=.git --exclude=.gitlab-ci.yml . public/
+    - cp -r . public
+    - rm -rf public/.git public/.gitlab-ci.yml public/.gitlab public/.gitignore
   artifacts:
     paths:
       - public

@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Tic‑Tac‑Toe — Advanced Demo</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <main class="container">
+    <header class="header">
+      <h1>Tic‑Tac‑Toe</h1>
+      <p class="subtitle">Play vs Human or AI — three difficulty levels. Keyboard friendly.</p>
+    </header>
+
+    <section class="panel">
+      <div class="left">
+        <div class="board-wrap" aria-hidden="false">
+          <div id="ttt" class="board" role="grid" aria-label="Tic Tac Toe">
+            <!-- 9 cells inserted in HTML for accessibility -->
+            <button class="cell" data-index="0" aria-label="Cell 1" data-pos="0"></button>
+            <button class="cell" data-index="1" aria-label="Cell 2" data-pos="1"></button>
+            <button class="cell" data-index="2" aria-label="Cell 3" data-pos="2"></button>
+            <button class="cell" data-index="3" aria-label="Cell 4" data-pos="3"></button>
+            <button class="cell" data-index="4" aria-label="Cell 5" data-pos="4"></button>
+            <button class="cell" data-index="5" aria-label="Cell 6" data-pos="5"></button>
+            <button class="cell" data-index="6" aria-label="Cell 7" data-pos="6"></button>
+            <button class="cell" data-index="7" aria-label="Cell 8" data-pos="7"></button>
+            <button class="cell" data-index="8" aria-label="Cell 9" data-pos="8"></button>
+          </div>
+        </div>
+
+        <div class="controls">
+          <div class="status" id="game-status" aria-live="polite">Turn: X</div>
+          <div class="buttons">
+            <button id="undo-btn" class="btn">Undo</button>
+            <button id="restart-btn" class="btn primary">Restart</button>
+          </div>
+        </div>
+      </div>
+
+      <aside class="right">
+        <div class="settings card">
+          <h3>Mode</h3>
+          <label><input type="radio" name="mode" value="human" checked> 2 Players</label>
+          <label><input type="radio" name="mode" value="ai"> Play vs AI</label>
+        </div>
+
+        <div class="settings card" id="ai-settings">
+          <h3>AI Difficulty</h3>
+          <label><input type="radio" name="difficulty" value="easy"> Easy</label>
+          <label><input type="radio" name="difficulty" value="medium" checked> Medium</label>
+          <label><input type="radio" name="difficulty" value="hard"> Hard</label>
+        </div>
+
+        <div class="scoreboard card">
+          <h3>Scoreboard</h3>
+          <div class="scores">
+            <div class="score"><span class="label">X</span><span id="score-x" class="value">0</span></div>
+            <div class="score"><span class="label">Draws</span><span id="score-d" class="value">0</span></div>
+            <div class="score"><span class="label">O</span><span id="score-o" class="value">0</span></div>
+          </div>
+          <button id="reset-scores" class="btn small">Reset Scores</button>
+        </div>
+
+        <div class="history card">
+          <h3>Move History</h3>
+          <ol id="history-list" class="history-list" aria-live="polite"></ol>
+        </div>
+      </aside>
+    </section>
+
+    <footer class="footer">
+      <p class="muted">This game uses a Minimax algorithm for optimal play on Hard mode (AI Difficulty).</p>
+    </footer>
+  </main>
+
+  <script src="script.js" defer></script>
+</body>
+</html>

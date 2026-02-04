@@ -1,10 +1,9 @@
 pages:
   stage: deploy
   script:
-    - mkdir -p public
-    - tar --exclude='.git' --exclude='.gitlab-ci.yml' --exclude='public' -cf site.tar .
-    - tar -xf site.tar -C public
-    - rm site.tar
+    - echo "Listing public/"
+    - ls -la public || true
+    - head -n 20 public/index.html || true
   artifacts:
     paths:
       - public

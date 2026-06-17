@@ -20,7 +20,7 @@ let turn = 'X';
 let over = false;
 let history = [];
 let scores = { X: 0, O: 0, D: 0 };
-
+let winHighlightTimer = null;
 // Config
 let mode = 'ai';
 let difficulty = 'medium';
@@ -288,6 +288,7 @@ function highlightLine(line){
 
 function endGame(result){
   over = true;
+
   if(result.winner === 'draw'){
     updateStatus('Draw!');
     scores.D += 1;
@@ -295,10 +296,15 @@ function endGame(result){
     updateStatus(`Winner: ${result.winner}`);
     scores[result.winner] += 1;
     highlightLine(result.line);
-    // draw animated SVG win line + confetti
     drawWinLine(result.line);
     launchConfetti();
+
+    if (winHighlightTimer) clearTimeout(winHighlightTimer);
+    winHighlightTimer = setTimeout(() => {
+      cells.forEach(c => c.classList.remove('win'));
+    }, 3000);
   }
+
   persistScores();
 }
 
@@ -345,8 +351,11 @@ function restart(){
   history = [];
   turn = 'X';
   over = false;
+
+  if (winHighlightTimer) clearTimeout(winHighlightTimer);
   clearWinLine();
   cells.forEach(c => c.classList.remove('win'));
+
   renderBoard();
   updateStatus('New game — Turn: X');
 }

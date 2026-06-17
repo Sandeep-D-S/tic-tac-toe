@@ -24,6 +24,7 @@ The game supports:
 - Confetti celebration
 
 ---
+## Deployed URL: https://eloquent-treacle-37027b.netlify.app/
 
 ## Technologies Used
 - **HTML5** – for structure and layout
@@ -95,8 +96,13 @@ The game supports:
 
 ## Folder Structure
 ```text
-TicTacToe/
-├── index.html
-├── styles.css
-├── script.js
+project-root/
+├── .github/
+│   └── workflows/
+│       └── pages.yml
+├── public/
+│   ├── index.html
+│   ├── script.js
+│   └── styles.css
+├── .gitlab-ci.yml
 └── README.md

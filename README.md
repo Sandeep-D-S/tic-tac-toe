@@ -107,6 +107,8 @@ project-root/
 ├── .gitlab-ci.yml
 └── README.md
 
+---
+```
 ## How the Application Works
 
 ### Game Flow

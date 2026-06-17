@@ -1,4 +1,4 @@
-# Tic-Tac-Toe Advanced Demo
+# Tic-Tac-Toe
 
 ## Project Objective
 This project is a responsive and interactive Tic-Tac-Toe game built using **HTML**, **CSS**, and **JavaScript**.  
